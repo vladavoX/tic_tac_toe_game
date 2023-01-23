@@ -12,8 +12,8 @@ const Header = () => {
         <VscChromeClose className='text-gray-300 text-md stroke-2' />
         <p className='text-xs text-gray-300'>TURN</p>
       </div>
-      <div className='p-2 bg-gray-300 shadow-black shadow-sm rounded-md ml-[12px]'>
-        <AiOutlineReload />
+      <div className='p-2 bg-gray-300 shadow-black shadow-sm rounded-md ml-[12px] cursor-pointer hover:bg-gray-100'>
+        <AiOutlineReload className='stroke-2' />
       </div>
     </div>
   )

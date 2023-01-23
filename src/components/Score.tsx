@@ -1,5 +1,20 @@
 const Score = () => {
-  return <div>Score</div>
+  return (
+    <div className='flex justify-between w-[272px] gap-4 text-xs'>
+      <div className='flex flex-col items-center bg-cyan-300 w-20 py-2 rounded-md shadow-black shadow-sm'>
+        <p>X (P1)</p>
+        <p className='font-bold text-sm'>0</p>
+      </div>
+      <div className='flex flex-col items-center bg-gray-300 w-20 py-2 rounded-md shadow-black shadow-sm'>
+        <p>TIES</p>
+        <p className='font-bold text-sm'>0</p>
+      </div>
+      <div className='flex flex-col items-center bg-yellow-500 w-20 py-2 rounded-md shadow-black shadow-sm'>
+        <p>O (P2)</p>
+        <p className='font-bold text-sm'>0</p>
+      </div>
+    </div>
+  )
 }
 
 export default Score
