@@ -4,7 +4,7 @@ import Score from './components/Score'
 
 function App() {
   return (
-    <div className='bg-slate-800 min-h-screen flex flex-col justify-center items-center'>
+    <div className='bg-slate-800 min-h-screen flex flex-col gap-4 justify-center items-center'>
       <Header />
       <Game />
       <Score />
