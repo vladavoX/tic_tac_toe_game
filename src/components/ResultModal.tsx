@@ -55,7 +55,9 @@ const ResultModal = ({
       '
       >
         <div className='flex items-center gap-6'>
-          {winner === 'TIE' && <h1>TIE</h1>}
+          {winner === 'TIE' && (
+            <h1 className='text-4xl text-gray-300 font-bold'>TIE</h1>
+          )}
           {winner === 'X' && (
             <>
               <VscChromeClose className='text-5xl text-cyan-300 stroke-2' />
