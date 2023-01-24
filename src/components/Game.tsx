@@ -1,13 +1,9 @@
 import { VscChromeClose, VscCircleLargeOutline } from 'react-icons/vsc'
 import { useEffect } from 'react'
 
-let board = [
-  ['', '', ''],
-  ['', '', ''],
-  ['', '', ''],
-]
-
 interface Props {
+  board: string[][]
+  setBoard: React.Dispatch<React.SetStateAction<string[][]>>
   turn: 'X' | 'O'
   setTurn: (turn: 'X' | 'O') => void
   setScore: React.Dispatch<
@@ -21,7 +17,15 @@ interface Props {
   setWinner: (winner: 'X' | 'O' | 'TIE' | null) => void
 }
 
-const Game = ({ turn, setTurn, setScore, winner, setWinner }: Props) => {
+const Game = ({
+  board,
+  setBoard,
+  turn,
+  setTurn,
+  setScore,
+  winner,
+  setWinner,
+}: Props) => {
   const checkWinner = async () => {
     for (let i = 0; i < 3; i++) {
       if (

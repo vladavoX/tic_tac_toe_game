@@ -3,9 +3,10 @@ import { AiOutlineReload } from 'react-icons/ai'
 
 interface Props {
   turn: 'X' | 'O'
+  newRound: () => void
 }
 
-const Header = ({ turn }: Props) => {
+const Header = ({ turn, newRound }: Props) => {
   return (
     <div className='flex justify-between w-[272px]'>
       <div className='flex items-center gap-1'>
@@ -20,7 +21,10 @@ const Header = ({ turn }: Props) => {
         )}
         <p className='text-xs text-gray-300'>TURN</p>
       </div>
-      <div className='p-2 bg-gray-300 shadow-black shadow-sm rounded-md ml-[12px] cursor-pointer hover:bg-gray-100'>
+      <div
+        className='p-2 bg-gray-300 shadow-black shadow-sm rounded-md ml-[12px] cursor-pointer hover:bg-gray-100'
+        onClick={newRound}
+      >
         <AiOutlineReload className='stroke-2' />
       </div>
     </div>

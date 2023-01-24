@@ -11,11 +11,11 @@ const Score = ({ score }: Props) => {
       </div>
       <div className='flex flex-col items-center bg-gray-300 w-20 py-2 rounded-md shadow-black shadow-sm'>
         <p>TIES</p>
-        <p className='font-bold text-sm'>{score.O}</p>
+        <p className='font-bold text-sm'>{score.TIE}</p>
       </div>
       <div className='flex flex-col items-center bg-yellow-500 w-20 py-2 rounded-md shadow-black shadow-sm'>
         <p>O (P2)</p>
-        <p className='font-bold text-sm'>{score.TIE}</p>
+        <p className='font-bold text-sm'>{score.O}</p>
       </div>
     </div>
   )
