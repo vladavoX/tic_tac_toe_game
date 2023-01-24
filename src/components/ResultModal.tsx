@@ -31,7 +31,7 @@ const ResultModal = ({
       ['', '', ''],
       ['', '', ''],
     ])
-    setTurn(turn === 'X' ? 'O' : 'X')
+    setTurn((turn = 'X'))
     setWinner(null)
     setScore({
       X: 0,

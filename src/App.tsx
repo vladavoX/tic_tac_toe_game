@@ -12,7 +12,9 @@ function App() {
       ['', '', ''],
       ['', '', ''],
     ])
-    setTurn(turn === 'X' ? 'O' : 'X')
+    if (winner === 'X') setTurn('X')
+    if (winner === 'O') setTurn('O')
+    if (winner === 'TIE') setTurn(turn === 'X' ? 'X' : 'O')
     setWinner(null)
   }
 
