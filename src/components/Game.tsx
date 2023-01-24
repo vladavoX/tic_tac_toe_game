@@ -1,5 +1,5 @@
 import { VscChromeClose, VscCircleLargeOutline } from 'react-icons/vsc'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 let board = [
   ['', '', ''],
@@ -10,11 +10,18 @@ let board = [
 interface Props {
   turn: 'X' | 'O'
   setTurn: (turn: 'X' | 'O') => void
-  setScore: (score: { X: number; O: number; TIE: number }) => void
+  setScore: React.Dispatch<
+    React.SetStateAction<{
+      X: number
+      O: number
+      TIE: number
+    }>
+  >
+  winner: 'X' | 'O' | 'TIE' | null
   setWinner: (winner: 'X' | 'O' | 'TIE' | null) => void
 }
 
-const Game = ({ turn, setTurn, setScore, setWinner }: Props) => {
+const Game = ({ turn, setTurn, setScore, winner, setWinner }: Props) => {
   const checkWinner = async () => {
     for (let i = 0; i < 3; i++) {
       if (
@@ -52,11 +59,46 @@ const Game = ({ turn, setTurn, setScore, setWinner }: Props) => {
       setWinner(board[0][2] as 'X' | 'O')
       return
     }
+    let isTie = true
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (board[i][j] === '') {
+          isTie = false
+        }
+      }
+    }
+    if (isTie) {
+      setWinner('TIE')
+    }
   }
 
   useEffect(() => {
     checkWinner()
   }, [turn])
+
+  useEffect(() => {
+    if (winner === 'X') {
+      setScore((prev) => ({
+        ...prev,
+        X: prev.X + 1,
+      }))
+      return
+    }
+    if (winner === 'O') {
+      setScore((prev) => ({
+        ...prev,
+        O: prev.O + 1,
+      }))
+      return
+    }
+    if (winner === 'TIE') {
+      setScore((prev) => ({
+        ...prev,
+        TIE: prev.TIE + 1,
+      }))
+      return
+    }
+  }, [winner])
 
   return (
     <div className='flex flex-col gap-4'>

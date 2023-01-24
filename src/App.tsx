@@ -6,7 +6,7 @@ import Score from './components/Score'
 
 function App() {
   const [turn, setTurn] = useState<'X' | 'O'>('X')
-  const [score, setScore] = useState<{ X: number; O: number; TIE: number }>({
+  const [score, setScore] = useState({
     X: 0,
     O: 0,
     TIE: 0,
@@ -19,6 +19,7 @@ function App() {
         turn={turn}
         setTurn={setTurn}
         setScore={setScore}
+        winner={winner}
         setWinner={setWinner}
       />
       <Score score={score} />
