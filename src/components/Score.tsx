@@ -1,4 +1,8 @@
-const Score = () => {
+interface Props {
+  score: { X: number; O: number; TIE: number }
+}
+
+const Score = ({ score }: Props) => {
   return (
     <div className='flex justify-between w-[272px] gap-4 text-xs'>
       <div className='flex flex-col items-center bg-cyan-300 w-20 py-2 rounded-md shadow-black shadow-sm'>
