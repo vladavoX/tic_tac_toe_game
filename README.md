@@ -1,7 +1,7 @@
 ### #50ProjectsChallenge
 
 ### Previous Project 02 ➡ https://github.com/vladavoX/interactive_card_details_form<br />
-### Next Project 04 ➡ Soon!
+### Next Project 04 ➡ https://github.com/vladavoX/weather_app
 
 # Project 03: Tic Tac Toe Game
 
